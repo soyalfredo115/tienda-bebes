@@ -129,3 +129,24 @@
 
 /* Error */
 .error-page{min-height:70vh;display:grid;place-items:center;text-align:center}
+
+/* ===== Fondos por sección ===== */
+
+/* Home */
+body.page-home {
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg ... nube-estrellas ... %3E");
+  background-size: 90px 90px;
+}
+
+/* Tienda */
+body.page-shop {
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg ... puntitos-redondos ... %3E");
+}
+
+/* Checkout */
+body.page-checkout {
+  background-color: var(--bg);
+  background-image: none; /* más limpio para confianza */
+}

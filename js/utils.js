@@ -33,3 +33,15 @@ function toast(msg){
 
 // Number clamp
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+
+function launchConfetti(color = '#FFD700') {
+  for (let i = 0; i < 12; i++) {
+    const conf = document.createElement('div');
+    conf.className = 'confetti';
+    conf.style.backgroundColor = color;
+    conf.style.left = 50 + (Math.random() * 20 - 10) + '%';
+    conf.style.animation = `confettiFall 0.9s ease-out forwards`;
+    document.body.appendChild(conf);
+    setTimeout(() => conf.remove(), 900);
+  }
+}

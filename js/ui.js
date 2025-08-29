@@ -120,12 +120,14 @@ function buildProductCard(p){
 
   qs('.add-btn', card).addEventListener('click', ()=>{
     addToCart({ id:p.id, variant:p.age, qty:1 });
+    launchConfetti('#b4dcff'); // o el color pastel que quieras
   });
   qs('.wish-btn', card).addEventListener('click', (e)=>{
     e.preventDefault();
     toggleWishlist(p.id);
     e.currentTarget.classList.toggle('active');
     updateBadges();
+    launchConfetti('#b4dcff'); // o el color pastel que quieras
   });
 
   return card;
