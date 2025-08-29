@@ -1,6 +1,6 @@
-/* Product card */
+/* Tarjeta de producto */
 .product-card{
-  display:flex;flex-direction:column;gap:10px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)
+  display:flex;flex-direction:column;gap:10px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #eef2f7
 }
 .product-card__media{aspect-ratio:4/3;background:#f3f4f6}
 .product-card__body{padding:12px}
@@ -8,8 +8,9 @@
 .product-card__meta{display:flex;justify-content:space-between;align-items:center}
 .product-card__price{font-weight:800}
 .product-card__actions{display:flex;gap:8px;padding:12px;border-top:1px solid #eef2f7}
-.wish-btn{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:8px 10px;cursor:pointer}
-.wish-btn.active{background:var(--mint);border-color:transparent}
+.wish-btn{background:#fff;border:1.5px solid #e5e7eb;border-radius:10px;padding:8px 10px;cursor:pointer}
+.wish-btn:hover{background:var(--mint-50)}
+.wish-btn.active{background:var(--mint-200);border-color:var(--mint-400)}
 
 /* Toast */
 .toast{
@@ -17,10 +18,13 @@
   background:#111827;color:#fff;padding:10px 14px;border-radius:12px;box-shadow:var(--shadow);z-index:50;opacity:.98
 }
 
-/* Badges in product page */
+/* Badges en product page */
 .kv{display:flex;gap:8px;flex-wrap:wrap}
-.kv .badge{background:#eef6ff;color:#0b3b62}
+.kv .badge{background:var(--blue-100);color:#0b3b62;border:1px solid var(--blue-200)}
 .rating{color:#f59e0b}
 
-/* Breadcrumb spacing fix */
+/* Breadcrumb spacing */
 .breadcrumb span{user-select:none}
+
+/* Inputs pequeños en cart */
+.page-btn{min-width:36px}
