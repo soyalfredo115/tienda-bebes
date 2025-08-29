@@ -31,7 +31,7 @@ Incluye navegación por catálogo, filtros, carrito persistente, favoritos, logi
 1. **Clonar el repositorio**
    ```bash
    git clone https://github.com/soyalfredo115/tienda-bebes.git
-   cd TU-REPO
+   cd tienda-bebes
 
 
 - Abrir el proyecto
