@@ -1,0 +1,16 @@
+/* Page-specific touches */
+#results-count{margin-bottom:8px}
+.filters .btn{width:100%}
+.filters .btn.btn-text{width:auto}
+#empty-state{margin-top:12px}
+
+/* Newsletter hint colors */
+.form-hint.error{color:var(--error)}
+.form-hint.success{color:var(--success)}
+
+/* Footer subtle links */
+.site-footer a{color:var(--ink-600)}
+.site-footer a:hover{color:var(--ink)}
+
+/* Tiny helpers */
+.hide{display:none!important}

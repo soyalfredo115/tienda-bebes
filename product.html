@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Producto | Pequeños Sueños</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main class="container section">
+    <nav class="breadcrumb">
+      <a href="index.html">Inicio</a>
+      <span>/</span>
+      <a href="shop.html">Tienda</a>
+      <span>/</span>
+      <span id="breadcrumb-product">Producto</span>
+    </nav>
+
+    <div id="product-container" class="product-detail"></div>
+
+    <section class="container section">
+      <h2 class="section__title">También te puede gustar</h2>
+      <div id="related-products" class="grid grid-4"></div>
+    </section>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script src="js/utils.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/product-detail.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    name="description"
+    content="Pequeños Sueños - Tienda de merchandising para bebés y niños. Ropa, accesorios y más en tonos pastel."
+  />
+  <title>Pequeños Sueños | Inicio</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="icon" href="assets/img/favicon.png" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <h1>Pequeños Sueños</h1>
+          <p>Merchandising suave, seguro y adorable para bebés y niños.</p>
+          <a href="shop.html" class="btn btn-primary">Ver tienda</a>
+        </div>
+        <div class="hero__image" role="img" aria-label="Ropita de bebé en tonos pastel"></div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="section__title">Categorías destacadas</h2>
+      <div class="grid grid-4">
+        <a class="category-card" href="shop.html?category=Ropa">
+          <div class="category-card__image pastel-mint"></div>
+          <h3>Ropa</h3>
+        </a>
+        <a class="category-card" href="shop.html?category=Accesorios">
+          <div class="category-card__image pastel-blue"></div>
+          <h3>Accesorios</h3>
+        </a>
+        <a class="category-card" href="shop.html?category=Juguetes">
+          <div class="category-card__image pastel-mint"></div>
+          <h3>Juguetes</h3>
+        </a>
+        <a class="category-card" href="shop.html?category=Hogar">
+          <div class="category-card__image pastel-blue"></div>
+          <h3>Hogar</h3>
+        </a>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2 class="section__title">Favoritos de la semana</h2>
+      <div id="home-featured" class="grid grid-4"></div>
+      <div class="section__actions">
+        <a href="shop.html" class="btn btn-secondary">Explorar más</a>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container grid grid-3">
+        <div class="benefit-item">
+          <div class="benefit-icon">🍼</div>
+          <h3>Materiales suaves</h3>
+          <p>Algodón hipoalergénico y tintes seguros para pieles sensibles.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🚚</div>
+          <h3>Envío confiable</h3>
+          <p>Procesamiento rápido y seguimiento de pedido.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">💬</div>
+          <h3>Atención cercana</h3>
+          <p>Soporte humano, claro y amable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter__content">
+        <h2>Únete a nuestro boletín</h2>
+        <p>Promos dulces, lanzamientos y tips útiles para tu peque.</p>
+        <form id="newsletter-form" class="form-inline" novalidate>
+          <input type="email" name="email" placeholder="tu@correo.com" required />
+          <button type="submit" class="btn btn-primary">Suscribirme</button>
+        </form>
+        <p class="form-hint" id="newsletter-hint"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script src="js/utils.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Render destacados en home (primeros 8 productos)
+      const cont = document.getElementById('home-featured');
+      if (cont && window.PRODUCTS) {
+        const picks = window.PRODUCTS.slice(0, 8);
+        picks.forEach(p => {
+          const card = buildProductCard(p);
+          cont.appendChild(card);
+        });
+      }
+      // Newsletter
+      const form = document.getElementById('newsletter-form');
+      const hint = document.getElementById('newsletter-hint');
+      if (form) {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const email = form.email.value.trim();
+          if (!isValidEmail(email)) {
+            hint.textContent = 'Por favor, ingresa un correo válido.';
+            hint.className = 'form-hint error';
+            return;
+          }
+          saveNewsletterEmail(email);
+          hint.textContent = '¡Gracias por suscribirte!';
+          hint.className = 'form-hint success';
+          form.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

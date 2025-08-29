@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Tienda | Pequeños Sueños</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <header id="app-header"></header>
+
+  <main class="container section">
+    <h1 class="page-title">Tienda</h1>
+
+    <div class="shop-layout">
+      <aside class="filters">
+        <h2 class="filters__title">Filtrar</h2>
+        <form id="filters-form">
+          <div class="filter-group">
+            <label for="q"><strong>Búsqueda:</strong></label>
+            <input type="search" id="q" name="q" placeholder="Buscar productos..." />
+          </div>
+
+          <div class="filter-group">
+            <label for="category"><strong>Categoría:</strong></label>
+            <select id="category" name="category">
+              <option value="">Todas</option>
+              <option value="Ropa">Ropa</option>
+              <option value="Accesorios">Accesorios</option>
+              <option value="Juguetes">Juguetes</option>
+              <option value="Hogar">Hogar</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="age"><strong>Edad:</strong></label>
+            <select id="age" name="age">
+              <option value="">Todas</option>
+              <option value="0-3m">0–3m</option>
+              <option value="3-6m">3–6m</option>
+              <option value="6-12m">6–12m</option>
+              <option value="1-2a">1–2 años</option>
+              <option value="3-4a">3–4 años</option>
+              <option value="5-7a">5–7 años</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label><strong>Precio:</strong></label>
+            <div class="price-range">
+              <input type="number" id="min" name="min" placeholder="Mín" min="0" step="1" />
+              <span>-</span>
+              <input type="number" id="max" name="max" placeholder="Máx" min="0" step="1" />
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label for="sort"><strong>Ordenar por:</strong></label>
+            <select id="sort" name="sort">
+              <option value="relevance">Relevancia</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="name-asc">Nombre: A–Z</option>
+              <option value="name-desc">Nombre: Z–A</option>
+            </select>
+          </div>
+
+          <button class="btn btn-secondary" type="submit">Aplicar</button>
+          <button class="btn btn-text" type="button" id="clear-filters">Limpiar</button>
+        </form>
+      </aside>
+
+      <section class="shop-results">
+        <p id="results-count" class="muted"></p>
+        <div id="products-grid" class="grid grid-3"></div>
+        <div id="empty-state" class="empty-state" hidden>No hay resultados para tu búsqueda.</div>
+        <div class="pagination" id="pagination"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="app-footer"></footer>
+
+  <script src="js/utils.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/shop.js" defer></script>
+</body>
+</html>
