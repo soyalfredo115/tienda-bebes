@@ -1,0 +1,70 @@
+/* ====== Live Search ====== */
+.live-search-results {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+}
+.live-search-results a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--ink);
+}
+.live-search-results a:hover {
+  background: var(--blue-50);
+}
+
+/* ====== Quick View Modal ====== */
+.quick-view-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.4);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 999;
+}
+.quick-view {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  max-width: 680px;
+  width: 90%;
+  box-shadow: var(--shadow);
+}
+.quick-view img { border-radius: 12px; }
+.quick-view-close {
+  position: absolute; top: 10px; right: 14px; cursor: pointer; font-size: 22px;
+}
+
+/* ====== Mini Cart ====== */
+.mini-cart {
+  position: absolute;
+  top: 48px; right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: var(--shadow);
+  display: none;
+  flex-direction: column;
+  z-index: 200;
+}
+.mini-cart-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px; border-bottom: 1px solid #f1f5f9;
+}
+.mini-cart-item img { width: 40px; height: 40px; object-fit: cover; border-radius: 8px; }
+.mini-cart-footer { padding: 8px; }
+
+/* ====== Barra envío gratis ====== */
+.free-shipping-bar {
+  background: var(--blue-200);
+  color: var(--ink);
+  padding: 8px 12px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}

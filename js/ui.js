@@ -114,6 +114,7 @@ function buildProductCard(p){
     </div>
     <div class="product-card__actions">
       <button class="btn btn-primary add-btn">Añadir</button>
+      <button class="btn btn-text quick-view-btn" data-id="${p.id}">👁 Vista rápida</button>
       <button class="wish-btn ${wishActive?'active':''}" title="Favorito">❤️</button>
     </div>
   `;
